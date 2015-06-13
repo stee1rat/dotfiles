@@ -11,4 +11,6 @@
 - nm-applet
 - gnome-settings-daemon
 
+Simply run create_links.sh to make the required soft links. Though keep in mind that this script doesn't do any backups.
+
 ![Screenshot](https://github.com/stee1rat/dotfiles/blob/master/screenshot.png)
