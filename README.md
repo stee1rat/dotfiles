@@ -1,7 +1,7 @@
 # i3 dotfiles
 
-- Chromium theme: http://frai7ty.deviantart.com/art/Numix-for-Chrome-362293134
-- Wallpaper: http://www.goodfon.ru/wallpaper/gorod-vancouver-canada.html
+Chromium theme: http://frai7ty.deviantart.com/art/Numix-for-Chrome-362293134  
+Wallpaper: http://www.goodfon.ru/wallpaper/gorod-vancouver-canada.html
 
 #### Requiremens:
 - dmenu
