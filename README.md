@@ -10,3 +10,5 @@ Requiremens:
 - feh
 - nm-applet
 - gnome-settings-daemon
+
+![Screenshot](https://github.com/stee1rat/dotfiles/blob/master/screenshot.png)
