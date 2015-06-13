@@ -5,9 +5,6 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-#exec --no-startup-id nm-applet
-#exec --no-startup-id gnome-settings-daemon
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
