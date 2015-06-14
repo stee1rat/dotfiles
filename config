@@ -111,11 +111,12 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Pulse Audio controls
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
 # Volume control (Alt + F2 or Alt + F3)
+bindcode $mod+67 exec pactl set-sink-mute 0 toggle # mute sound
 bindcode $mod+68 exec amixer set Master 5%-
 bindcode $mod+69 exec amixer set Master 5%+
 
