@@ -11,9 +11,6 @@
 
 set $mod Mod4
 
-#for_window [class="Skype"] floating enable 
-for_window [class="Thunar"] floating enable
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -118,12 +115,17 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound vo
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
+# Volume control (Alt + F2 or Alt + F3)
+bindcode $mod+68 exec amixer set Master 5%-
+bindcode $mod+69 exec amixer set Master 5%+
+
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+# Brightness control (Alt + F7 or Alt + F8)
+bindcode $mod+73 exec xbacklight - 10
+bindcode $mod+74 exec xbacklight + 10
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -174,7 +176,6 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     status_command i3status
-#    status_command $HOME/.conky-i3.sh 
     mode dock
     tray_output LVDS1
     output LVDS1
@@ -187,7 +188,6 @@ bar {
 bar {
     position top
     status_command i3status
-#    status_command $HOME/.conky-i3.sh 
     mode dock
     tray_output VGA1
     output VGA1
