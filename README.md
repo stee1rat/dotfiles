@@ -8,7 +8,7 @@ Wallpaper: http://www.goodfon.ru/wallpaper/gorod-vancouver-canada.html
 - i3status
 - xscreensaver
 - feh
-- nm-applet (installed on arch with network-manager-applet package)
+- nm-applet (network-manager-applet package)
 - gnome-settings-daemon
 
 Simply run create_links.sh to make the required soft links.  
