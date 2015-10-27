@@ -18,13 +18,15 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:DejaVu Sans Mono 10
+#font pango:DejaVu Sans Mono 12
+font pango:Roboto Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
+#bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -134,8 +136,18 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Borders
+for_window [class="^.*"] border pixel 2
+
+# class                 border  backgr. text    indicator
+client.focused          #676d3d #676d3d #ebdbb2 #676d3d
+client.unfocused        #323232 #323232 #ebdbb2 #323232
+client.focused_inactive #323232 #333333 #ebdbb2 #323232
+client.urgent           #383a3b #383a3b #ee0000 #383a3b
+
 # lock
-bindsym $mod+Control+l exec i3lock -i /home/steelrat/Pictures/gorod-vancouver-canada.jpg
+#bindsym $mod+Control+l exec i3lock -i /home/steelrat/Pictures/gorod-vancouver-canada.jpg
+bindsym $mod+Control+l exec xscreensaver-command --lock
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -180,10 +192,21 @@ bar {
     mode dock
     tray_output LVDS1
     output LVDS1
-    colors{
-        background #232323
+#    colors{
+#        background #232323
+#        statusline #DCDCDC
+#    }
+    font pango:Roboto, Font Awesome 11.5px
+    colors {
+        background #1c1f26
         statusline #DCDCDC
+        #class             border  bg      text
+        focused_workspace  #343d46 #343d46 #c0c5ce
+        active_workspace   #343d46 #343d46 #53575f
+        inactive_workspace #242932 #242932 #53575f
+        urgent_workspace   #2d2d2d #2d2d2d #cad0c4
     }
+
 }
 
 bar {
@@ -192,9 +215,19 @@ bar {
     mode dock
     tray_output VGA1
     output VGA1
-    colors{
-        background #232323
+#    colors{
+#        background #232323
+#        statusline #DCDCDC
+#    }
+   font pango:Roboto, Font Awesome 11.5px
+    colors {
+        background #1c1f26
         statusline #DCDCDC
+        #class             border  bg      text
+        focused_workspace  #343d46 #343d46 #c0c5ce
+        active_workspace   #343d46 #343d46 #53575f
+        inactive_workspace #242932 #242932 #53575f
+        urgent_workspace   #2d2d2d #2d2d2d #cad0c4
     }
 }
 
@@ -208,3 +241,8 @@ exec xscreensaver -no-splash
 exec --no-startup-id feh --bg-fill /home/steelrat/Pictures/gorod-vancouver-canada.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
+
+gaps inner 5
+gaps outer 5
+
+#smart_gaps on
