@@ -1,0 +1,7 @@
+'atom-workspace atom-text-editor':
+  'ctrl-left': 'editor:move-to-previous-word-boundary'
+  'ctrl-right': 'editor:move-to-next-word-boundary'
+  'ctrl-shift-left': 'editor:select-to-previous-word-boundary'
+  'ctrl-shift-right': 'editor:select-to-next-word-boundary'
+  'ctrl-backspace': 'editor:delete-to-previous-word-boundary'
+  'ctrl-delete': 'editor:delete-to-next-word-boundary'

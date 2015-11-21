@@ -1,0 +1,20 @@
+"*":
+  welcome:
+    showOnStartup: false
+  core:
+    autoHideMenuBar: true
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    invisibles: {}
+    softWrap: true
+    tabLength: 3
+    fontFamily: "Roboto mono"
+    tabType: "soft"
+    fontSize: 15
+  "one-light-ui": {}
+  "highlight-selected": {}
+  "adwaita-pro-ui": {}
+  "one-dark-ui": {}
