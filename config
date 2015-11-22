@@ -20,6 +20,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # chose a FreeType font, such as:
 font pango:DejaVu Sans Mono 10
 
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -198,6 +199,19 @@ bar {
     }
 }
 
+bar {
+    position top
+    status_command i3status
+    mode dock
+    tray_output DVI-I-1
+    output DVI-I-1
+    colors{
+        background #232323
+        statusline #DCDCDC
+    }
+}
+
+
 client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
 client.focused_inactive #333333 #5F676A #ffffff #484e50
 client.unfocused        #333333 #424242 #888888 #292d2e
@@ -208,3 +222,7 @@ exec xscreensaver -no-splash
 exec --no-startup-id feh --bg-fill /home/steelrat/Pictures/gorod-vancouver-canada.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
+
+gaps inner 10
+gaps outer 10
+
