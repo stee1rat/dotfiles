@@ -20,13 +20,14 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # chose a FreeType font, such as:
 #font pango:DejaVu Sans Mono 12
 font pango:Roboto Mono 10
+#font pango:monospace 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
-#bindsym $mod+Return exec urxvt
+#bindsym $mod+Return exec terminator
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -137,7 +138,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Borders
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
 # class                 border  backgr. text    indicator
 client.focused          #676d3d #676d3d #ebdbb2 #676d3d
@@ -187,15 +188,11 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    position top
+    position bottom
     status_command i3status
     mode dock
     tray_output LVDS1
     output LVDS1
-#    colors{
-#        background #232323
-#        statusline #DCDCDC
-#    }
     font pango:Roboto, Font Awesome 11.5px
     colors {
         background #1c1f26
@@ -210,20 +207,16 @@ bar {
 }
 
 bar {
-    position top
+    position bottom
     status_command i3status
     mode dock
     tray_output VGA1
     output VGA1
-#    colors{
-#        background #232323
-#        statusline #DCDCDC
-#    }
-   font pango:Roboto, Font Awesome 11.5px
+    font pango:Roboto, Font Awesome 11.5px
     colors {
         background #1c1f26
         statusline #DCDCDC
-        #class             border  bg      text
+       #class             border  bg      text
         focused_workspace  #343d46 #343d46 #c0c5ce
         active_workspace   #343d46 #343d46 #53575f
         inactive_workspace #242932 #242932 #53575f
@@ -236,13 +229,12 @@ client.focused_inactive #333333 #5F676A #ffffff #484e50
 client.unfocused        #333333 #424242 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
 
-new_window 1pixel
 exec xscreensaver -no-splash
 exec --no-startup-id feh --bg-fill /home/steelrat/Pictures/gorod-vancouver-canada.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
 
-gaps inner 5
-gaps outer 5
+#gaps inner 5
+#gaps outer 5
 
 #smart_gaps on

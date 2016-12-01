@@ -3,7 +3,8 @@ syntax on
 set background=dark
 color distinguished
 set expandtab
-set tabstop=3
-set shiftwidth=3
+set tabstop=2
+set shiftwidth=2
 set nobackup
 set nowritebackup
+colorscheme base16-default-dark

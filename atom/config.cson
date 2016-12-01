@@ -9,12 +9,15 @@
     ]
   editor:
     invisibles: {}
-    softWrap: true
     tabLength: 3
     fontFamily: "Roboto mono"
     tabType: "soft"
-    fontSize: 15
   "one-light-ui": {}
   "highlight-selected": {}
   "adwaita-pro-ui": {}
   "one-dark-ui": {}
+  "exception-reporting":
+    userId: "7470b7ca-54d4-9da8-c586-aef3d4c1610f"
+runner:
+  scopes:
+    js: "nodejs"
