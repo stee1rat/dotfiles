@@ -5,4 +5,4 @@ ln -sf `pwd`/terminator/config ~/.config/terminator/config
 ln -sf `pwd`/.vimrc ~/.vimrc
 ln -sf `pwd`/atom/config.cson ~/.atom/
 ln -sf `pwd`/atom/keymap.cson ~/.atom/
-
+ln -sf `pwd`/.Xdefaults ~/.Xdefaults

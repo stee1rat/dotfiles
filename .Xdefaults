@@ -1,0 +1,75 @@
+! URxvt.font:xft:Ubuntu Mono:pixelsize=10,style=regular
+URxvt.font:xft:Roboto Mono:size=10
+URxvt.letterSpace: -1
+
+URxvt*.transparent: true
+URxvt*.shading: 20
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+! URxvt*.shading: 10
+URxvt.scrollBar: false
+
+! Background color
+URxvt*background: black
+
+! Font color
+URxvt*foreground: white
+URxvt.perl-ext-common:selection-to-clipboard
+! URxvt*foreground: green
+
+! hard contrast: *background: #1d2021
+! *background: #282828
+! soft contrast: *background: #32302f
+! *foreground: #ebdbb2
+! Black + DarkGrey
+! *color0:  #282828
+! *color8:  #928374
+! DarkRed + Red
+! *color1:  #cc241d
+! *color9:  #fb4934
+! DarkGreen + Green
+! *color2:  #98971a
+! *color10: #b8bb26
+! DarkYellow + Yellow
+! *color3:  #d79921
+! *color11: #fabd2f
+! DarkBlue + Blue
+! *color4:  #458588
+! *color12: #83a598
+! DarkMagenta + Magenta
+! *color5:  #b16286
+! *color13: #d3869b
+! DarkCyan + Cyan
+! *color6:  #689d6a
+! *color14: #8ec07c
+! LightGrey + White
+! *color7:  #a89984
+! *color15: #ebdbb2
+
+! terminal colors ------------------------------------------------------------
+
+! tangoesque scheme
+*background: #111111
+*foreground: #babdb6
+! Black (not tango) + DarkGrey
+*color0:  #000000
+*color8:  #555753
+! DarkRed + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+! DarkGreen + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3:  #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4:  #204a87
+*color12: #3465a4
+! DarkMagenta + Magenta
+*color5:  #ce5c00
+*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*color6:  #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7:  #cccccc
