@@ -1,10 +1,8 @@
 set t_Co=256
 syntax on
 set background=dark
-color distinguished
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set nobackup
 set nowritebackup
-colorscheme base16-default-dark

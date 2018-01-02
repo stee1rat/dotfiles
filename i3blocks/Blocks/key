@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#KEYMAP_NAME=$(xset -q|grep LED| awk '{ if (substr ($10,5,1) == 1) print "ru"; else print "en"; }')
+
+#if [[ "${KEYMAP_NAME}" ]]; then
+  #echo "${KEYMAP_NAME}"
+  #echo "${KEYMAP_NAME}"
+  #echo ""
+#fi
+
+Key=$(xset -q|grep LED| awk '{ if (substr ($10,5,1) == 1) print "ru"; else print "en"; }')
+
+echo -e " $Key"

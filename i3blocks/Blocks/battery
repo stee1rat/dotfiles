@@ -1,0 +1,87 @@
+#!/bin/bash
+
+main() {
+    local ac=$(cat /sys/class/power_supply/AC/online)
+
+    if [[ -d /sys/class/power_supply/BAT0 ]] ; then
+        local int_present=$(cat /sys/class/power_supply/BAT0/present)
+        local int_capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+        local int_status=$(cat /sys/class/power_supply/BAT0/status)
+    else
+        local int_present=0
+        local int_capacity=0
+    fi
+
+    if [[ -d /sys/class/power_supply/BAT1 ]] ; then
+        local ext_present=$(cat /sys/class/power_supply/BAT1/present)
+        local ext_capacity=$(cat /sys/class/power_supply/BAT1/capacity)
+        local ext_status=$(cat /sys/class/power_supply/BAT1/status)
+    else
+        local ext_present=0
+        local ext_capacity=0
+    fi
+
+    local longline=""
+    local shortline=""
+    local colorline=""
+    local exitstate=0
+
+    # write charging or battery symbol
+    if [[ "${ac}" == "1" ]] ; then
+        longline="${longline} "
+    else
+        longline="${longline}☃ "
+    fi
+
+    # show state of internat battery if present
+    if [[ "$int_present" == "1" ]] ; then
+        longline="${longline} ${int_capacity}%"
+        shortline="${shortline}${int_capacity}%"
+    fi
+
+    # add seperator if needed
+    if [[ "$int_present" == "1" && "$ext_present" == "1" ]] ; then
+        longline="${longline} "
+        shortline="${shortline} / "
+    fi
+
+    # show state of internat battery if present
+    if [[ "$ext_present" == "1" ]] ; then
+        longline="${longline}EXT: ${ext_capacity}%"
+        shortline="${shortline}${int_capacity}%"
+    fi
+
+    # set color
+    local cap=$((int_capacity + ext_capacity))
+    if [[ "${ac}" == "1" ]] ; then
+        if [[ $int_present == 1 && $ext_present == 1 ]] ; then
+            if [[ $cap -gt 196 ]] ; then
+                colorline="#00ff00"
+            else
+                colorline="#ff9900"
+            fi
+        else
+            if [[ $cap -gt 98 ]] ; then
+                colorline="#00ff00"
+            else
+                colorline="#ff9900"
+            fi
+        fi
+    else
+        if [[ $cap -lt 15 ]] ; then
+            colorline="#ff0000"
+            # set urgent state
+            exitstate=33
+        else
+            colorline="#ffff00"
+        fi
+    fi
+
+    echo "${longline}"
+    echo "${shortline}"
+    echo "${colorline}"
+    exit $exitstate
+}
+main
+
+
