@@ -5,12 +5,13 @@ Wallpaper: http://www.goodfon.ru/wallpaper/gorod-vancouver-canada.html
 
 #### Requirements:
 - dmenu
-- i3status
 - xscreensaver
 - feh
-- nm-applet (network-manager-applet package)
-- gnome-settings-daemon
+- network-manager-applet
+- net-tools
 - terminator
+- ttf-font-awesome
+- otf-font-awesome
 
 Simply run create_links.sh to make the required soft links.  
 Though keep in mind that this script doesn't do any backups.

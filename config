@@ -245,7 +245,7 @@ client.unfocused        #333333 #424242 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
 
 exec xscreensaver -no-splash
-exec --no-startup-id feh --bg-fill /home/steelrat/Pictures/1511642538-d3eda565622408ba2e95ffa2e3bd92c4.jpeg
+exec --no-startup-id feh --bg-fill /home/stee1rat/Pictures/gorod-vancouver-canada.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
 exec setxkbmap -layout us,ru
