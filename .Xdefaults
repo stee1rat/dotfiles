@@ -1,9 +1,10 @@
-! URxvt.font:xft:Ubuntu Mono:pixelsize=10,style=regular
-URxvt.font:xft:Roboto Mono:size=10
+!URxvt.font:xft:Ubuntu Mono:pixelsize=10,style=regular
+!URxvt.font:xft:Roboto Mono:size=10
+URxvt*font: xft:Monospace:pixelsize=13
 URxvt.letterSpace: -1
 
 URxvt*.transparent: true
-URxvt*.shading: 20
+URxvt*.shading: 5
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
 ! URxvt*.shading: 10
 URxvt.scrollBar: false

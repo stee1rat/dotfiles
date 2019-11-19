@@ -18,4 +18,3 @@ esac
 
 unset Mem
 unset Swap
-

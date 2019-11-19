@@ -28,9 +28,9 @@ main() {
 
     # write charging or battery symbol
     if [[ "${ac}" == "1" ]] ; then
-        longline="${longline} "
+        longline="${longline}"
     else
-        longline="${longline}☃ "
+        longline="${longline}☃"
     fi
 
     # show state of internat battery if present

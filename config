@@ -18,17 +18,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-#font pango:DejaVu Sans Mono 12
 font pango:Roboto Mono 10
-#font pango:monospace 8
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec urxvt
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -90,8 +86,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+#rename workspace 1 to "1: www"
+
 # switch to workspace
-bindsym $mod+1 workspace 1
+bindsym $mod+1 workspace number 1 www
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
@@ -139,7 +137,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Borders
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 
 # class                 border  backgr. text    indicator
 client.focused          #676d3d #676d3d #ebdbb2 #676d3d
@@ -190,45 +188,47 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    position top
-    status_command i3blocks
-    mode dock
-    tray_output LVDS-1
-    output LVDS-1
-    font pango:Roboto, Font Awesome 11.5px
+  position top
+  height 24
+  #status_command i3blocks
+  status_command i3status
+  mode dock
+  tray_output LVDS-1
+  output LVDS-1
+  font pango:Roboto Mono, Font Awesome 11.5px
     colors {
-        background #1c1f26
-        statusline #DCDCDC
-        #class             border  bg      text
-        focused_workspace  #343d46 #343d46 #c0c5ce
-        active_workspace   #343d46 #343d46 #53575f
-        inactive_workspace #242932 #242932 #53575f
-        urgent_workspace   #2d2d2d #2d2d2d #cad0c4
-    }
-
+      background #000000
+      statusline #DCDCDC
+      #class             border  bg      text
+      focused_workspace  #000000 #000000 #c0c5ce
+      active_workspace   #000000 #000000 #53575f
+      inactive_workspace #000000 #000000 #53575f
+      urgent_workspace   #000000 #000000 #cad0c4
+  }
 }
 
 bar {
-    position bottom
-    status_command i3blocks
-    mode dock
-    tray_output VGA1
-    output VGA1
-    font pango:Roboto, Font Awesome 11.5px
-    colors {
-        background #1c1f26
-        statusline #DCDCDC
-       #class             border  bg      text
-        focused_workspace  #343d46 #343d46 #c0c5ce
-        active_workspace   #343d46 #343d46 #53575f
-        inactive_workspace #242932 #242932 #53575f
-        urgent_workspace   #2d2d2d #2d2d2d #cad0c4
-    }
+  position bottom
+  status_command i3blocks
+  mode dock
+  tray_output VGA1
+  output VGA1
+  font pango:Roboto Mono, Font Awesome 11.5px
+  colors {
+    background #1c1f26
+    statusline #DCDCDC
+    #class             border  bg      text
+    focused_workspace  #343d46 #000000 #c0c5ce
+    active_workspace   #343d46 #000000 #53575f
+    inactive_workspace #242932 #000000 #53575f
+    urgent_workspace   #2d2d2d #000000 #cad0c4
+  }
 }
 
 bar {
     position top
     status_command i3blocks
+    #status_command i3status
     mode dock
     tray_output DVI-I-1
     output DVI-I-1
@@ -237,7 +237,6 @@ bar {
         statusline #DCDCDC
     }
 }
-
 
 client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
 client.focused_inactive #333333 #5F676A #ffffff #484e50
@@ -250,11 +249,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
 exec setxkbmap -layout us,ru
 exec setxkbmap -option 'grp:alt_shift_toggle'
+#exec setxkbmap -option 'grp:win_space_toggle'
 #exec xmodmap ~/.Xmodmap
 #exec xmodmap -e "keycode 166 = Page_Up"
 #exec xmodmap -e "keycode 167 = Page_Down"
 
-#gaps inner 5
-#gaps outer 5
+gaps inner 5
+gaps outer 5
 
-#smart_gaps on
+smart_gaps on
+smart_borders on
